@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {UserService} from '../../user.service';
 import { User } from '../../user';
 
@@ -9,7 +9,7 @@ import { User } from '../../user';
 })
 export class UsersGeneratorComponent implements OnInit {
  private gotUsers: User[] = this.userService.users;
- private getUsr: User = this.userService.user;
+ public getUsr: User = this.userService.user;
   constructor(private userService: UserService) { }
 
 

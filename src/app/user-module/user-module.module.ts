@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import {UsersGeneratorComponent} from './smart-component/users-generator/users-generator.component';
 import {UserService} from './user.service';
 import {HttpClientModule} from '@angular/common/http';
+import { UserViewComponent } from './smart-component/user-view/user-view.component';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule
   ],
-  declarations: [UsersGeneratorComponent],
+  declarations: [UsersGeneratorComponent, UserViewComponent],
   exports: [UsersGeneratorComponent],
   providers: [UserService]
 })
