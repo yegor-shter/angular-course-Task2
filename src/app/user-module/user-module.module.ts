@@ -4,13 +4,14 @@ import {UsersGeneratorComponent} from './smart-component/users-generator/users-g
 import {UserService} from './user.service';
 import {HttpClientModule} from '@angular/common/http';
 import { UserViewComponent } from './smart-component/user-view/user-view.component';
+import { DateFormatPipe } from './pipes/date-format.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule
   ],
-  declarations: [UsersGeneratorComponent, UserViewComponent],
+  declarations: [UsersGeneratorComponent, UserViewComponent, DateFormatPipe],
   exports: [UsersGeneratorComponent],
   providers: [UserService]
 })

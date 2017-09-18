@@ -11,7 +11,7 @@ export class UserService {
   private lastId = 0;
   constructor(private httpClient: HttpClient) { }
 
-  public async get(seed: string): Promise<User>{
+  private async get(seed: string): Promise<User>{
     let params = new HttpParams();
     params= params.set('inc', 'name, email, phone, dob, picture');
 

@@ -2,7 +2,7 @@
   users-generator works!
 </p>
 <div *ngFor="let user of gotUsers">
-  <p>Name: {{user.name.title}} {{user.name.first}} {{user.name.last}}.    Phone: {{user.phone}},  email: {{user.email}},    date of birth {{user.dob}}</p>
+  <p>Name: {{user.name.title}} {{user.name.first}} {{user.name.last}}.    Phone: {{user.phone}},  email: {{user.email}},    date of birth {{user.dob | date}}</p>
   <button (click)="getUser(user.id)">User View</button>
 </div>
 
