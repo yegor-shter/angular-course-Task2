@@ -30,4 +30,5 @@ export interface User {
     thumbnail: string
   };
   dob: Date;
+  id: number;
 }

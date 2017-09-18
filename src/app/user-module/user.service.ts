@@ -8,6 +8,7 @@ export class UserService {
   private readonly apiUrl ='https://randomuser.me/api';
   public users: User[] =[];
   private user: User;
+  private lastId = 0;
   constructor(private httpClient: HttpClient) { }
 
   public async get(seed: string): Promise<User>{
@@ -26,8 +27,9 @@ export class UserService {
       email: response.results[0].email,
       phone: response.results[0].phone,
       picture: response.results[0].picture,
-      dob: new Date(response.results[0].dob)
-    };
+      dob: new Date(response.results[0].dob),
+      id: this.lastId
+    }
   }
 
   public async loadUser(){
@@ -38,12 +40,17 @@ export class UserService {
     //try {
       while(true){
         const person = await this.get(seed);
+
         seed = person.email;
         if(person.dob.getFullYear() >1975)
           {
             this.user = person;
+            person.id = ++this.lastId;
+            this.lastId = person.id;
+
           }else{
             this.user = person;
+            person.id = ++this.lastId;
             this.users.push(this.user);
             break;
           }
