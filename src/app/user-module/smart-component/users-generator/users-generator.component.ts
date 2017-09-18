@@ -10,7 +10,7 @@ import { User } from '../../user';
 export class UsersGeneratorComponent implements OnInit {
  private gotUsers: User[] = this.userService.users;
  public getUsr: User = this.userService.user;
-  constructor(private userService: UserService) { }
+ constructor(private userService: UserService) { }
 
 
   ngOnInit() {
