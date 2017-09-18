@@ -9,6 +9,7 @@ import { User } from '../../user';
 })
 export class UsersGeneratorComponent implements OnInit {
  private gotUsers: User[] = this.userService.users;
+ private getUsr: User = this.userService.user;
   constructor(private userService: UserService) { }
 
 
@@ -16,5 +17,10 @@ export class UsersGeneratorComponent implements OnInit {
     this.userService.loadUser();
     console.log(this.gotUsers);
   }
+  getUser(id){
+    this.getUsr = this.userService.getUserById(id);
+    console.log(this.getUsr);
+  }
+
 
 }

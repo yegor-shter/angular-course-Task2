@@ -7,7 +7,7 @@ import {User, Response} from './user';
 export class UserService {
   private readonly apiUrl ='https://randomuser.me/api';
   public users: User[] =[];
-  private user: User;
+  public user: User;
   private lastId = 0;
   constructor(private httpClient: HttpClient) { }
 
@@ -61,6 +61,13 @@ export class UserService {
 
     // }
   }
+
+  public getUserById(id: number): User{
+    return this.users
+    .filter(user => user.id === id).pop();
+  }
+
+
 
 
 }

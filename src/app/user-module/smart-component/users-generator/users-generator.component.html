@@ -3,4 +3,5 @@
 </p>
 <div *ngFor="let user of gotUsers">
   <p>Name: {{user.name.title}} {{user.name.first}} {{user.name.last}}.    Phone: {{user.phone}},  email: {{user.email}},    date of birth {{user.dob}}</p>
+  <button (click)="getUser(user.id)">del</button>
 </div>
