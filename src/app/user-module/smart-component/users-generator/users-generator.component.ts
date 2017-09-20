@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import {UserService} from '../../user.service';
 import { User } from '../../user';
+import {PictureDirective} from './../../directives/picture.directive';
 
 @Component({
   selector: 'app-users-generator',
@@ -8,19 +9,20 @@ import { User } from '../../user';
   styleUrls: ['./users-generator.component.css']
 })
 export class UsersGeneratorComponent implements OnInit {
- private gotUsers: User[] = this.userService.users;
- private getUsr: User = this.userService.user;
+  private users: User[]; // = this.userService.users;
+  private selectedUser: User; // = this.userService.user;
  constructor(private userService: UserService) { }
 
 
-  ngOnInit() {
-    this.userService.loadUser();
-    console.log(this.gotUsers);
-  }
-  getUser(id){
-    this.getUsr = this.userService.getUserById(id);
-    console.log(this.getUsr);
-  }
+  async ngOnInit() {
+    this.users = await this.userService.loadUser();
+    console.log(this.users);
 
-
+  }
+  selectUser(user) {
+    this.selectedUser = user;
+    // this.getUsr = this.userService.getUserById(id);
+    console.log(this.selectedUser);
+    // this.users = this.users.filter(u => u.id !== user.id);
+  }
 }

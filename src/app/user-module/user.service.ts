@@ -60,6 +60,7 @@ export class UserService {
     // } catch (error) { console.error(error);
 
     // }
+    return this.users;
   }
 
   public getUserById(id: number): User{

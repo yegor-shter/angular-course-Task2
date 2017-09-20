@@ -22,7 +22,7 @@ export interface User {
     first: string,
     last: string
   };
-  email:string;
+  email: string;
   phone: string;
   picture: {
     large: string,

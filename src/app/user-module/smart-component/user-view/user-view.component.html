@@ -2,10 +2,10 @@
   user-view works!
 </p>
 <div>
-  <p>Full name: {{getUsr?.name.title}} {{getUsr?.name.first}} {{getUsr?.name.last}}</p>
-  <p>Telephone number: {{getUsr?.phone}}</p>
-  <p>Date of birth: {{getUsr?.dob}}</p>
-  <p>Email: {{getUsr?.email}}</p>
-  <p>Picture: <img src={{getUsr?.picture}}/></p>
+  <p>Full name: {{user.name.title}} {{user.name.first}} {{user.name.last}}</p>
+  <p>Telephone number: {{user.phone}}</p>
+  <p>Date of birth: {{user.dob}}</p>
+  <p>Email: {{user.email}}</p>
+  <p >Picture: <img appPicture [images]="images"/></p>
 
 </div>

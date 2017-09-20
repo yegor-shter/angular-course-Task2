@@ -5,13 +5,14 @@ import {UserService} from './user.service';
 import {HttpClientModule} from '@angular/common/http';
 import { UserViewComponent } from './smart-component/user-view/user-view.component';
 import { DateFormatPipe } from './pipes/date-format.pipe';
+import { PictureDirective } from './directives/picture.directive';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule
   ],
-  declarations: [UsersGeneratorComponent, UserViewComponent, DateFormatPipe],
+  declarations: [UsersGeneratorComponent, UserViewComponent, DateFormatPipe, PictureDirective],
   exports: [UsersGeneratorComponent],
   providers: [UserService]
 })

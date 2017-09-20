@@ -1,5 +1,5 @@
 import { Component, OnInit, Input  } from '@angular/core';
-import {UsersGeneratorComponent} from './../users-generator/users-generator.component';
+import { User } from '../../user';
 
 @Component({
   selector: 'app-user-view',
@@ -8,10 +8,12 @@ import {UsersGeneratorComponent} from './../users-generator/users-generator.comp
 })
 export class UserViewComponent {
   @Input()
-  getUsr: UsersGeneratorComponent[];
+  protected user: User;
   constructor() { }
-  ngOnIni(){}
+  ngOnIni() {}
 
-
-
+  // Creating new array of pictures from object through get.
+  protected get images(): string[] {
+    return [this.user.picture.large, this.user.picture.medium, this.user.picture.thumbnail];
+  }
 }
