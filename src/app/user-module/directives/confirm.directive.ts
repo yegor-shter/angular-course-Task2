@@ -1,15 +1,15 @@
-import { Directive, ElementRef, Renderer2, Input, HostListener } from '@angular/core';
+import { Directive, Input, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appConfirm]'
 })
-@Input()
-export class ConfirmDirective {
 
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
+export class ConfirmDirective {
+  @Input() notice = 'Would u like to download users?';
+  constructor() { }
   @HostListener('click')
 getMsg(){
-alert('Do want to click that button?');
+alert(this.notice);
 
 }
 }
