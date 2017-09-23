@@ -13,7 +13,7 @@ export class UserViewComponent {
   ngOnIni() {}
 
   // Creating new array of pictures from object through get.
-  protected get images(): string[] {
+  public get images(): string[] {
     return [this.user.picture.large, this.user.picture.medium, this.user.picture.thumbnail];
   }
 }

@@ -14,10 +14,12 @@ export class UsersGeneratorComponent implements OnInit {
  constructor(private userService: UserService) { }
 
 
-  async ngOnInit() {
+  async ngOnInit() {  }
+
+  async getUser(){
+    this.users = [];
     this.users = await this.userService.loadUser();
     console.log(this.users);
-
   }
   selectUser(user) {
     this.selectedUser = user;

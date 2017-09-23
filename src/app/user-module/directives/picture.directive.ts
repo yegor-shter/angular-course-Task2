@@ -1,12 +1,11 @@
-import { Directive, ElementRef, Renderer2, Input, HostListener, OnInit } from '@angular/core';
-import {UsersGeneratorComponent} from './../smart-component/users-generator/users-generator.component';
+import { Directive, ElementRef, Renderer2, Input, HostListener,  OnChanges } from '@angular/core';
+
 
 @Directive({
   selector: '[appPicture]'
 })
-export class PictureDirective implements OnInit {
-  @Input()
- getUsr: UsersGeneratorComponent[ ];
+export class PictureDirective implements OnChanges {
+
  @Input()
  images: string[];
  curentImageIndex = 0;
@@ -21,13 +20,13 @@ export class PictureDirective implements OnInit {
   console.log(this.images, imageUrl, this.curentImageIndex);
   this.renderer.setAttribute(this.el.nativeElement, 'src', imageUrl);
   this.curentImageIndex++;
-  if(this.curentImageIndex > 2){
+  if (this.curentImageIndex > 2) {
     this.curentImageIndex = 0;
   }
   }
-
-  ngOnInit(): void {
+  ngOnChanges(){
     this.setNextPic();
   }
+
 }
 

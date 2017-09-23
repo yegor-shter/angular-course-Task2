@@ -6,7 +6,7 @@ import {User, Response} from './user';
 @Injectable()
 export class UserService {
   private readonly apiUrl ='https://randomuser.me/api';
-  public users: User[] =[];
+  public users: User[] = [];
   public user: User;
   private lastId = 0;
   constructor(private httpClient: HttpClient) { }
