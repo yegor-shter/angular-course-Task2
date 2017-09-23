@@ -1,11 +1,13 @@
-<p>
-  users-generator works!
-</p>
+
 
 
 <button appConfirm (click)='getUser()' [disabled]="!isEnabled">Load users from API</button>
+<p>
+    List of Users
+
+  </p>
 <div *ngFor="let user of users">
-  <p>Name: {{user.name.title}} {{user.name.first}} {{user.name.last}}.    Phone: {{user.phone}},  email: {{user.email}},    date of birth {{user.dob | date}}</p>
+  <p>Name: {{user.name.title}} {{user.name.first}} {{user.name.last}}    date of birth {{user.dob | date}}</p>
   <button   (click)="selectUser(user)">User View</button>
 </div>
 

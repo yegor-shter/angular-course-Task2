@@ -32,5 +32,6 @@ export class UsersGeneratorComponent implements OnInit {
   }
   userDelete(e) {
     this.users = this.users.filter(u => u.id !== e);
+    this.selectedUser = null;
   }
 }
