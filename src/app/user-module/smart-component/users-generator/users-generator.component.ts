@@ -30,4 +30,7 @@ export class UsersGeneratorComponent implements OnInit {
     console.log(this.selectedUser);
     // this.users = this.users.filter(u => u.id !== user.id);
   }
+  userDelete(e) {
+    this.users = this.users.filter(u => u.id !== e);
+  }
 }

@@ -9,4 +9,4 @@
   <button   (click)="selectUser(user)">User View</button>
 </div>
 
-<app-user-view [user]="selectedUser" *ngIf="selectedUser"></app-user-view>
+<app-user-view [user]="selectedUser" *ngIf="selectedUser"  (onUserDelete)="userDelete($event)"></app-user-view>

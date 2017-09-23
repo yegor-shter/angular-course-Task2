@@ -1,4 +1,4 @@
-import { Component, OnInit, Input  } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
 import { User } from '../../user';
 
 @Component({
@@ -9,6 +9,8 @@ import { User } from '../../user';
 export class UserViewComponent {
   @Input()
   protected user: User;
+  @Output()
+  public onUserDelete = new EventEmitter();
   constructor() { }
   ngOnIni() {}
 
@@ -16,4 +18,8 @@ export class UserViewComponent {
   public get images(): string[] {
     return [this.user.picture.large, this.user.picture.medium, this.user.picture.thumbnail];
   }
+  userId() {
+  this.onUserDelete.emit(this.user.id);
+
+}
 }
