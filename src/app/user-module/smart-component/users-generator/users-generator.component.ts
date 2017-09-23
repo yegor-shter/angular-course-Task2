@@ -11,14 +11,17 @@ import {PictureDirective} from './../../directives/picture.directive';
 export class UsersGeneratorComponent implements OnInit {
   private users: User[]; // = this.userService.users;
   private selectedUser: User; // = this.userService.user;
+  public isEnabled = true;
  constructor(private userService: UserService) { }
 
 
   async ngOnInit() {  }
 
   async getUser(){
+    this.isEnabled = false;
     this.users = [];
     this.users = await this.userService.loadUser();
+    this.isEnabled = !this.isEnabled;
     console.log(this.users);
   }
   selectUser(user) {

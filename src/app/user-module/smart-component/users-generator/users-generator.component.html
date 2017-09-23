@@ -3,7 +3,7 @@
 </p>
 
 
-<button appConfirm (click)='getUser()'>Load users from API</button>
+<button appConfirm (click)='getUser()' [disabled]="!isEnabled">Load users from API</button>
 <div *ngFor="let user of users">
   <p>Name: {{user.name.title}} {{user.name.first}} {{user.name.last}}.    Phone: {{user.phone}},  email: {{user.email}},    date of birth {{user.dob | date}}</p>
   <button   (click)="selectUser(user)">User View</button>

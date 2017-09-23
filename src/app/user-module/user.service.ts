@@ -13,7 +13,7 @@ export class UserService {
 
   private async get(seed: string): Promise<User>{
     let params = new HttpParams();
-    params= params.set('inc', 'name, email, phone, dob, picture');
+    params = params.set('inc', 'name, email, phone, dob, picture');
 
     if(seed){
       params =params.set('seed', seed);
@@ -59,8 +59,8 @@ export class UserService {
 
     // } catch (error) { console.error(error);
 
-    // }
     return this.users;
+
   }
 
   public getUserById(id: number): User{
