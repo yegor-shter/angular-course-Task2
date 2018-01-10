@@ -1,6 +1,16 @@
-# HomeworkForThird
+# Task2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.1.
+
+## Description
+
+  - Generate UserModule
+  - Create user-generator component (list of users, btn - load users{must be disabled until list of users will be downloaded}, subscibed on event onUserDelete)
+  - Create user-view component: store and display user info, btn - delet user, Output
+  - Create Directives:
+    - first directive get for input array of pictures, onclick - picture changes (using Renderer2 for DOM, cycled)
+    - second directive input - string, window.confirm(string)
+  - Create Service all logis for getting users implemented with Promise
 
 ## Development server
 
